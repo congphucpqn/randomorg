@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input { padding: 10px; font-size: 18px; }
+        button { padding: 10px 20px; font-size: 18px; margin-top: 20px; }
+        #result { font-size: 24px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Random Number Generator</h1>
+    <p>Enter range for random number generation:</p>
+    <input type="number" id="min" placeholder="Min" value="1"> to 
+    <input type="number" id="max" placeholder="Max" value="100">
+    <br><br>
+    <button id="generateButton">Generate</button>
+    <div id="result">Result: </div>
+
+    <script>
+        document.getElementById("generateButton").addEventListener("click", function() {
+            const min = parseInt(document.getElementById("min").value);
+            const max = parseInt(document.getElementById("max").value);
+            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("result").innerText = "Result: " + randomNumber;
+        });
+    </script>
+</body>
+</html>
